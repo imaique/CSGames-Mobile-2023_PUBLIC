@@ -46,13 +46,19 @@ namespace UnderwaterCity
         async void fetch_water_qual()
         {
             WaterQuality waterQuality = await UnderwaterServices.GetWaterQuality();
-            WaterQualityStr = "Air Quality: " + waterQuality.information.int_water_quality;
+            WaterQualityStr = "Water Quality: " + waterQuality.information.int_water_quality;
         }
 
         [RelayCommand]
         async Task OnSwipe()
         {
             await Shell.Current.GoToAsync(nameof(UpdatePage));
+        }
+
+        [RelayCommand]
+        async Task TapSOS()
+        {
+            await Shell.Current.GoToAsync(nameof(SOSPage));
         }
 
         string get_default()
