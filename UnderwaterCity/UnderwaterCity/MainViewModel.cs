@@ -7,21 +7,43 @@ namespace UnderwaterCity
 	public partial class MainViewModel : ObservableObject
 	{
 		[ObservableProperty]
-		string waterTempString;
+		string externalWaterTemp;
 
-		float water_temp;
+        [ObservableProperty]
+        string internalTemp;
 
-		 
-		public MainViewModel()
+        [ObservableProperty]
+        string airQualityStr;
+
+        [ObservableProperty]
+        string waterQualityStr;
+
+
+        public MainViewModel()
 		{
-			WaterTempString = get_default();
-			fetch_temperatures();
+            ExternalWaterTemp = get_default();
+            InternalTemp = get_default();
+            AirQualityStr = get_default();
+            WaterQualityStr = get_default();
+            fetch_temperatures();
 		}
 
 		async void fetch_temperatures()
 		{
 			WeatherForecast weatherForecast = await UnderwaterServices.GetTemp();
-			WaterTempString = "Water temp is: " + weatherForecast.information.ext_water_temp;
+            ExternalWaterTemp = "Water temp is: " + weatherForecast.information.ext_water_temp;
+            InternalTemp = "City Ambient Temperature: " + weatherForecast.information.int_temp;
+        }
+
+        async void fetch_air_qual()
+        {
+            AirQuality airQuality = await UnderwaterServices.GetAirQuality();
+            AirQualityStr = "Air Quality: " + airQuality.information.int_air_quality;
+        }
+        async void fetch_water_qual()
+        {
+            WaterQuality waterQuality = await UnderwaterServices.GetWaterQuality();
+            WaterQualityStr = "Air Quality: " + waterQuality.information.int_water_quality;
         }
 
 

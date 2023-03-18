@@ -12,11 +12,28 @@
             VerticalOptions="Center">
 
             <Label
-                Text="{Binding WaterTempString}"
+                Text="{Binding ExternalWaterTemp}"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
 
+            <Label
+                Text="{Binding InternalTemp}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="{Binding AirQualityStr}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="{Binding WaterQualityStr}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
         </VerticalStackLayout>
     </ScrollView>
 
