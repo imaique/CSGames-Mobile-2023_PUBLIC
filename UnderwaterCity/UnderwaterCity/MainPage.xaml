@@ -3,14 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="UnderwaterCity.MainPage"
              xmlns:viewmodel="clr-namespace:UnderwaterCity"
-             x:DataType="viewmodel:MainViewModel">
+             x:DataType="viewmodel:MainViewModel"
+             BackgroundColor="White">
+
 
     <ScrollView>
-
-        <ScrollView.GestureRecognizers>
-            <SwipeGestureRecognizer Direction="Left" Command="{Binding SwipeCommand}"/>
-
-        </ScrollView.GestureRecognizers>
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
@@ -23,30 +20,34 @@
                 HorizontalOptions="Center" />
 
             <Label
-                FontFamily="Atlantis"
                 Text="{Binding ExternalWaterTemp}"
+                FontFamily="Atlantis"
                 FontSize="32"
                 HorizontalOptions="Center" />
 
             <Label
                 Text="{Binding InternalTemp}"
+                FontFamily="Atlantis"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
 
             <Label
                 Text="{Binding AirQualityStr}"
+                FontFamily="Atlantis"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
 
             <Label
                 Text="{Binding WaterQualityStr}"
+                FontFamily="Atlantis"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
             <Button
                 x:Name="SOSBtn"
+                FontFamily="Atlantis"
                 Text="SOS"
                 HorizontalOptions="End"/>
             
