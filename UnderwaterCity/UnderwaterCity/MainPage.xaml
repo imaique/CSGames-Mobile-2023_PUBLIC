@@ -21,7 +21,9 @@
 
             <Label
                 FontFamily="Atlantis"
-                Text="{Binding ExternalWaterTemp}"/>
+                Text="{Binding ExternalWaterTemp}"
+                FontSize="32"
+                HorizontalOptions="Center" />
 
             <Label
                 Text="{Binding InternalTemp}"
