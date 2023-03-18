@@ -7,7 +7,7 @@ namespace UnderwaterCity
     public partial class UpdateViewModel : ObservableObject
     {
         [ObservableProperty]
-        string powerLevel;
+        string powerLevel = "test";
 
         [ObservableProperty]
         string news;
@@ -27,7 +27,7 @@ namespace UnderwaterCity
             PowerLevelJSON power = await UnderwaterServices.GetPowerLevel();
             float powerlvl = power.information.power_levels;
             string powerString = powerlvl > 9000 ? " (over 9000)" : " (under 9000)";
-            PowerLevel = "Power Levels is: " + powerlvl;
+            PowerLevel = "Power Levels is: " + powerlvl + powerString;
         }
 
         string get_default()
