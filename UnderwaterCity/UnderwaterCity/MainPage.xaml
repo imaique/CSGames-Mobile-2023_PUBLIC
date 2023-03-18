@@ -28,12 +28,14 @@
             <Label
                 Text="{Binding ExternalWaterTemp}"
                 FontFamily="Atlantis"
+                FontAttributes="Bold"
                 FontSize="32"
                 HorizontalOptions="Center" />
 
             <Label
                 Text="{Binding InternalTemp}"
                 FontFamily="Atlantis"
+                FontAttributes="Bold"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
@@ -41,6 +43,7 @@
             <Label
                 Text="{Binding AirQualityStr}"
                 FontFamily="Atlantis"
+                FontAttributes="Bold"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
@@ -48,12 +51,14 @@
             <Label
                 Text="{Binding WaterQualityStr}"
                 FontFamily="Atlantis"
+                FontAttributes="Bold"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
             <Button
                 x:Name="SOSBtn"
                 FontFamily="Atlantis"
+                FontAttributes="Bold"
                 Text="SOS"
                 Command="{Binding TapSOSCommand}"
                 HorizontalOptions="End"/>
