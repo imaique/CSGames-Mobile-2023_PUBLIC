@@ -58,8 +58,12 @@
 
 	<ItemGroup>
 	  <None Remove="Services\" />
+	  <None Remove="Resources\Images\csgames_Atlantis.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Services\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\csgamestlantis.png" />
 	</ItemGroup>
 </Project>

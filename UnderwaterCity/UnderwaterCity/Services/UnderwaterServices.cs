@@ -73,7 +73,5 @@ namespace UnderwaterCity.Services
         public WaterInfo information { get; set; }
 
     }
-
-
 }
 
