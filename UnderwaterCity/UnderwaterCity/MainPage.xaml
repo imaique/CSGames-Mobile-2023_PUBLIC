@@ -8,6 +8,11 @@
 
 
     <Grid>
+
+        <Grid.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Left" Command="{Binding SwipeCommand}"/>
+
+        </Grid.GestureRecognizers>
         <Image
             x:Name="backgroundImage"
             Source="back.jpg"

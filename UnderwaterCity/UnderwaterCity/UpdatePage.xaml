@@ -7,7 +7,6 @@
              x:DataType="viewmodel:UpdateViewModel">
 
     <Grid>
-        
         <Image
             x:Name="backgroundImage"
             Source="back.jpg"
