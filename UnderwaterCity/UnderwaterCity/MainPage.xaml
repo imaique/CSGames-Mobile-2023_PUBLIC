@@ -55,6 +55,7 @@
                 x:Name="SOSBtn"
                 FontFamily="Atlantis"
                 Text="SOS"
+                Command="{Binding TapSOSCommand}"
                 HorizontalOptions="End"/>
             
         </VerticalStackLayout>

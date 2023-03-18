@@ -1,5 +1,6 @@
 ﻿using System;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using UnderwaterCity.Services;
 
 namespace UnderwaterCity
@@ -33,6 +34,12 @@ namespace UnderwaterCity
         string get_default()
         {
             return "Loading";
+        }
+
+        [RelayCommand]
+        async Task TapSOS()
+        {
+            await Shell.Current.GoToAsync(nameof(SOSPage));
         }
     }
 }

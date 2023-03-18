@@ -1,10 +1,17 @@
 ﻿using System;
+using CommunityToolkit.Mvvm.ComponentModel;
+
 namespace UnderwaterCity
 {
-	public class SOSViewModel
-	{
+	public partial class SOSViewModel: ObservableObject
+    {
 		[ObservableProperty]
-		public SOSViewModel()
+		string name;
+
+        [ObservableProperty]
+        string location;
+
+        public SOSViewModel()
 		{
 
 		}
