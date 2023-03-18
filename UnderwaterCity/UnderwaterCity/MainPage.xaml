@@ -6,6 +6,8 @@
              x:DataType="viewmodel:MainViewModel">
 
     <ScrollView>
+
+
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
@@ -38,6 +40,11 @@
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
+            <Button
+                x:Name="SOSBtn"
+                Text="SOS"
+                HorizontalOptions="End"/>
+            
         </VerticalStackLayout>
     </ScrollView>
 
