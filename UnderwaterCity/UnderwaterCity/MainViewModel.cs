@@ -1,5 +1,6 @@
 ﻿using System;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using UnderwaterCity.Services;
 
 namespace UnderwaterCity
@@ -48,6 +49,11 @@ namespace UnderwaterCity
             WaterQualityStr = "Air Quality: " + waterQuality.information.int_water_quality;
         }
 
+        [RelayCommand]
+        async Task OnSwipe()
+        {
+            await Shell.Current.GoToAsync(nameof(UpdatePage));
+        }
 
         string get_default()
 		{

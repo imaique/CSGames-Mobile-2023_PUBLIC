@@ -36,11 +36,28 @@ namespace UnderwaterCity.Services
 
         public static async Task<WaterQuality> GetWaterQuality()
         {
-            var json = await client.GetStringAsync("air");
+            var json = await client.GetStringAsync("water");
             WaterQuality waterQuality = JsonSerializer.Deserialize<WaterQuality>(json);
-
-            Console.WriteLine(waterQuality.information.int_water_quality);
             return waterQuality;
+        }
+
+        public static async Task<PowerLevelJSON> GetPowerLevel()
+        {
+            var json = await client.GetStringAsync("power");
+            PowerLevelJSON power = JsonSerializer.Deserialize<PowerLevelJSON>(json);
+            return power;
+        }
+        public static async Task<NewsJSON> GetNews()
+        {
+            var json = await client.GetStringAsync("news");
+            NewsJSON power = JsonSerializer.Deserialize<NewsJSON>(json);
+            return power;
+        }
+        public static async Task<TransitJSON> GetTransit()
+        {
+            var json = await client.GetStringAsync("transit");
+            TransitJSON power = JsonSerializer.Deserialize<TransitJSON>(json);
+            return power;
         }
 
 
@@ -71,6 +88,41 @@ namespace UnderwaterCity.Services
             public int int_water_quality { get; set; }
         }
         public WaterInfo information { get; set; }
+
+    }
+
+    public class PowerLevelJSON
+    {
+        public class LevelInfo
+        {
+            public float power_levels { get; set; }
+        }
+        public LevelInfo information { get; set; }
+
+    }
+    public class NewsJSON
+    {
+        public class NewsStory
+        { 
+            public int id { get; set; }
+            public string message { get; set; }
+            public string title { get; set; }
+            public int type { get; set; }
+        }
+        public IList<NewsStory> news { get; set; }
+
+    }
+    public class TransitJSON
+    {
+        public class TransitItem
+        {
+            public int id { get; set; }
+            public int frequency { get; set; }
+            public int line { get; set; }
+            public string description { get; set; }
+            public string schedule { get; set; }
+        }
+        public IList<TransitItem> transit { get; set; }
 
     }
 }
