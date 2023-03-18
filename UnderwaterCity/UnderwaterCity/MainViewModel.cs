@@ -26,6 +26,8 @@ namespace UnderwaterCity
             AirQualityStr = get_default();
             WaterQualityStr = get_default();
             fetch_temperatures();
+            fetch_air_qual();
+            fetch_water_qual();
 		}
 
 		async void fetch_temperatures()
