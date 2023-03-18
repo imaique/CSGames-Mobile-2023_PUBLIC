@@ -25,6 +25,24 @@ namespace UnderwaterCity.Services
 			return weather;
 		}
 
+        public static async Task<AirQuality> GetAirQuality()
+        {
+            var json = await client.GetStringAsync("air");
+            AirQuality airQuality = JsonSerializer.Deserialize<AirQuality>(json);
+
+            Console.WriteLine(airQuality.information.int_air_quality);
+            return airQuality;
+        }
+
+        public static async Task<WaterQuality> GetWaterQuality()
+        {
+            var json = await client.GetStringAsync("air");
+            WaterQuality waterQuality = JsonSerializer.Deserialize<WaterQuality>(json);
+
+            Console.WriteLine(waterQuality.information.int_water_quality);
+            return waterQuality;
+        }
+
 
     }
     public class WeatherForecast
@@ -37,5 +55,25 @@ namespace UnderwaterCity.Services
         public WeatherInfo information { get; set; }
 
     }
+    public class AirQuality
+    {
+        public class AirInfo
+        {
+            public int int_air_quality { get; set; }
+        }
+        public AirInfo information { get; set; }
+
+    }
+    public class WaterQuality
+    {
+        public class WaterInfo
+        {
+            public int int_water_quality { get; set; }
+        }
+        public WaterInfo information { get; set; }
+
+    }
+
+
 }
 
