@@ -7,7 +7,13 @@
              BackgroundColor="White">
 
 
-    <ScrollView>
+    <Grid>
+        <Image
+            x:Name="backgroundImage"
+            Source="back.jpg"
+            Aspect="AspectFill"
+            HorizontalOptions="Start"/>
+
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
@@ -52,7 +58,7 @@
                 HorizontalOptions="End"/>
             
         </VerticalStackLayout>
-    </ScrollView>
+    </Grid>
 
 </ContentPage>
 
