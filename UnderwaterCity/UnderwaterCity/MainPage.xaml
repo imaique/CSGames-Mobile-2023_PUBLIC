@@ -1,8 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<<<<<<< HEAD
              xmlns:models="clr-namespace:Font.Model1"
              x:Class="UnderwaterCity.MainPage">
+=======
+             x:Class="UnderwaterCity.MainPage"
+             xmlns:viewmodel="clr-namespace:UnderwaterCity"
+             x:DataType="viewmodel:MainViewModel">
+>>>>>>> origin/main
 
     <ScrollView>
         <VerticalStackLayout
@@ -10,34 +16,34 @@
             Padding="30,0"
             VerticalOptions="Center">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
             <Label
+<<<<<<< HEAD
                 FontFamily="Atlantis"
                 Text="Hello, World!"
+=======
+                Text="{Binding ExternalWaterTemp}"
+>>>>>>> origin/main
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
 
             <Label
-                Text="10"
-                SemanticProperties.HeadingLevel="Level2"
-
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
+                Text="{Binding InternalTemp}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
                 HorizontalOptions="Center" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
+            <Label
+                Text="{Binding AirQualityStr}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
                 HorizontalOptions="Center" />
 
+            <Label
+                Text="{Binding WaterQualityStr}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
         </VerticalStackLayout>
     </ScrollView>
 
