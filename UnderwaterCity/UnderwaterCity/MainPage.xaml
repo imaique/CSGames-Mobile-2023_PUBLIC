@@ -7,7 +7,10 @@
 
     <ScrollView>
 
+        <ScrollView.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Left" Command="{Binding SwipeCommand}"/>
 
+        </ScrollView.GestureRecognizers>
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
