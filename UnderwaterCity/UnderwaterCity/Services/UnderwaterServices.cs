@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Text.Json;
 
 namespace UnderwaterCity.Services
@@ -58,6 +59,24 @@ namespace UnderwaterCity.Services
             var json = await client.GetStringAsync("transit");
             TransitJSON power = JsonSerializer.Deserialize<TransitJSON>(json);
             return power;
+        }
+
+        public static async Task PostSOS(string name, string location)
+        {
+            var sos = new SOSPost
+            {
+                sos_signal = new SOSPost.SOSInfo
+                {
+                    name = name,
+                    location = location
+                }
+            };
+
+            var json = JsonSerializer.Serialize(sos);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync("sos", content);
+
         }
 
 
@@ -124,6 +143,16 @@ namespace UnderwaterCity.Services
         }
         public IList<TransitItem> transit { get; set; }
 
+    }
+
+    public class SOSPost
+    {
+        public class SOSInfo
+        {
+            public string name { get; set; }
+            public string location { get; set; }
+        }
+        public SOSInfo sos_signal { get; set; }
     }
 }
 
